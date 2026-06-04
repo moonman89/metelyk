@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { catalog, formatPrice, productImage } from "@/data/catalog";
+import { catalog, formatPrice } from "@/data/catalog";
 import { ProductDescription } from "@/components/ProductDescription";
+import { TeaVisual } from "@/components/TeaVisual";
 
 export function ProductPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -21,6 +22,7 @@ export function ProductPage() {
 
   const category = catalog.categories.find((c) => c.slug === product.category);
   const variant = product.variants[variantIdx];
+  const index = catalog.products.findIndex((p) => p.slug === product.slug);
 
   return (
     <article className="page-product page-pad">
@@ -30,7 +32,7 @@ export function ProductPage() {
 
       <div className="product-editorial">
         <div className="product-editorial-media">
-          <img src={productImage(product)} alt={product.title_en} />
+          <TeaVisual product={product} index={index} />
         </div>
         <div className="product-editorial-info">
           {category && <p className="label-xs">{category.name_en}</p>}
@@ -52,7 +54,7 @@ export function ProductPage() {
           </div>
 
           <button type="button" className="cta-block cta-block--full" disabled>
-            [ Add to bag — {formatPrice(variant.price_uah)} ]
+            [ Inquiry — {formatPrice(variant.price_uah)} ]
           </button>
 
           <ProductDescription slug={product.slug} />
