@@ -3,7 +3,7 @@
     "source": "https://syorb.me",
     "scraped_at": "2026-06-05",
     "currency": "UAH",
-    "note": "English descriptions to be refined in CMS; UA descriptions preserved in description_ua"
+    "note": "English tasting notes in data/descriptions-en.json; UA in description_ua per product"
   },
   "brand": {
     "name": "Metelyk",
