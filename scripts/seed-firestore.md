@@ -4,7 +4,7 @@ After creating the Firebase project and enabling Firestore + Storage:
 
 1. `npm install -g firebase-tools` (if needed)
 2. `firebase login`
-3. `firebase use syorb-shop`
+3. `firebase use metelyk-shop`
 4. Upload images from `public/assets/original/` to Storage paths:
    - `products/{slug}.png`
    - `brand/logo.png`, `brand/hero.png`

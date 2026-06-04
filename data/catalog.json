@@ -6,8 +6,8 @@
     "note": "English descriptions to be refined in CMS; UA descriptions preserved in description_ua"
   },
   "brand": {
-    "name": "Syorb",
-    "tagline_en": "Slurp into the world of Chinese tea",
+    "name": "Metelyk",
+    "tagline_en": "Discover the world of Chinese tea",
     "tagline_ua": "Пiрнай у свiт китайського чаю",
     "address_en": "13 Spaska St, Kyiv, Ukraine",
     "address_ua": "м. Київ, вул. Спаська, 13"
@@ -461,7 +461,7 @@
   ],
   "pages": {
     "about_ua": "Сьорб: живий, справжній, чистий китайський чай з перших рук. Яніс Корчинський — особисто знайомий з фермерами.",
-    "about_en": "Syorb brings living, authentic Chinese tea direct from small family farms. Founded by Yanis Korchynsky — we know our farmers personally and guarantee fresh, fairly priced tea unavailable elsewhere in Ukraine or Europe.",
+    "about_en": "Metelyk brings living, authentic Chinese tea direct from small family farms. We know our farmers personally and guarantee fresh, fairly priced tea sourced with the same care as the original Syorb collection from Kyiv.",
     "delivery_en": {
       "nova_poshta": "Nova Poshta to nearest branch — from ₴50",
       "pickup": "Pickup at 13 Spaska St, Kyiv",
