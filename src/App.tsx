@@ -6,7 +6,7 @@ import { HomePage } from "@/pages/HomePage";
 import { CatalogPage } from "@/pages/CatalogPage";
 import { ProductPage } from "@/pages/ProductPage";
 import { TeawarePage } from "@/pages/TeawarePage";
-import { GiftsPage } from "@/pages/GiftsPage";
+import { ArchivePage } from "@/pages/ArchivePage";
 import { AboutPage } from "@/pages/AboutPage";
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
             <Route path="/catalog" element={<CatalogPage />} />
             <Route path="/tea/:slug" element={<ProductPage />} />
             <Route path="/teaware" element={<TeawarePage />} />
-            <Route path="/gifts" element={<GiftsPage />} />
+            <Route path="/archive" element={<ArchivePage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>
