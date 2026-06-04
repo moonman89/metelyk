@@ -16,8 +16,12 @@ export function CatalogPage() {
         <p className="section-label">
           <span>1</span> Collection
         </p>
-        <p className="label-xs">{filtered.length} teas · UAH</p>
+        <p className="label-xs">{filtered.length} teas / international inquiries</p>
       </div>
+
+      <p className="body-small catalog-intro">
+        A focused tea collection arranged by family, character, and ritual use. Each tea is treated as a collection piece: origin, aroma, body, finish, and state.
+      </p>
 
       <div className="filter-row">
         <button
