@@ -18,8 +18,8 @@ type Props = { slug: string };
 function Row({ label, value }: { label: string; value: string }) {
   return (
     <p style={{ margin: "0 0 0.75rem" }}>
-      <strong style={{ color: "var(--text)" }}>{label}: </strong>
-      <span style={{ color: "var(--text-muted)" }}>{value}</span>
+      <strong>{label}: </strong>
+      <span>{value}</span>
     </p>
   );
 }
@@ -30,10 +30,8 @@ export function ProductDescription({ slug }: Props) {
 
   return (
     <div className="description">
-      <p style={{ marginBottom: "1.25rem" }}>
-        <strong style={{ color: "var(--text)", fontFamily: "var(--font-display)", fontSize: "1.15rem" }}>
-          Tasting notes
-        </strong>
+      <p className="label-xs" style={{ marginBottom: "1.25rem" }}>
+        Tasting notes
       </p>
       {d.name && <Row label="Name" value={d.name} />}
       {d.type && <Row label="Type" value={d.type} />}
@@ -41,7 +39,7 @@ export function ProductDescription({ slug }: Props) {
       <Row label="Aroma" value={d.aroma} />
       <Row label="Taste" value={d.taste} />
       <Row label="Effect" value={d.effect} />
-      <p style={{ color: "var(--text-muted)", margin: "1rem 0" }}>{d.story}</p>
+      <p className="body-small" style={{ margin: "1rem 0" }}>{d.story}</p>
       <Row label="Brewing" value={d.brewing} />
     </div>
   );

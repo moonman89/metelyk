@@ -1,23 +1,33 @@
 import { Link, NavLink } from "react-router-dom";
 import { catalog } from "@/data/catalog";
 
+const nav = [
+  { to: "/catalog", num: "1", label: "Collection" },
+  { to: "/teaware", num: "2", label: "Teaware" },
+  { to: "/gifts", num: "3", label: "Gifts" },
+  { to: "/about", num: "4", label: "Atelier" },
+] as const;
+
 export function Header() {
   return (
     <header className="site-header">
-      <div className="container inner">
-        <Link to="/" className="logo">
-          <img src="/assets/original/brand/logo.png" alt="" width={36} height={36} />
-          <span>{catalog.brand.name}</span>
+      <div className="header-inner">
+        <Link to="/" className="wordmark">
+          {catalog.brand.name.toUpperCase()}
         </Link>
-        <nav className="nav">
-          <NavLink to="/catalog">Tea</NavLink>
-          <NavLink to="/teaware">Teaware</NavLink>
-          <NavLink to="/gifts">Gifts</NavLink>
-          <NavLink to="/about">About</NavLink>
+        <nav className="nav-main">
+          {nav.map((item) => (
+            <NavLink key={item.to} to={item.to} className="nav-link">
+              <span className="nav-num">{item.num}</span>
+              {item.label}
+            </NavLink>
+          ))}
         </nav>
-        <button type="button" className="cart-btn" disabled title="Cart — coming in shop phase">
-          Cart (soon)
-        </button>
+        <div className="header-actions">
+          <button type="button" className="btn-bracket" disabled title="Cart — coming soon">
+            Bag [0]
+          </button>
+        </div>
       </div>
     </header>
   );
