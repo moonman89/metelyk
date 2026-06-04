@@ -1,25 +1,24 @@
 import { catalog } from "@/data/catalog";
 
 export function AboutPage() {
-  const { delivery_en } = catalog.pages;
   return (
     <section className="page-about page-pad">
       <p className="section-label">
         <span>4</span> Atelier
       </p>
       <h1 className="page-heading">About Metelyk</h1>
-      <p className="body-small manifesto-text">{catalog.pages.about_en}</p>
+      <p className="body-small manifesto-text">
+        Metelyk is an international tea house for Chinese leaves, ritual objects, and quiet ceremony. The house language is restrained, archival, and focused: tea presented with the same care usually reserved for fashion, furniture, and art books.
+      </p>
 
       <div className="about-grid">
         <div className="about-cell">
-          <p className="label-xs">Delivery</p>
-          <p className="body-small">{delivery_en.nova_poshta}</p>
-          <p className="body-small">{delivery_en.pickup}</p>
+          <p className="label-xs">Collection</p>
+          <p className="body-small">{catalog.products.length} teas across oolong, pu-er, white, green, and red tea families.</p>
         </div>
         <div className="about-cell">
-          <p className="label-xs">Payment</p>
-          <p className="body-small">{delivery_en.card}</p>
-          <p className="body-small">{delivery_en.cash}</p>
+          <p className="label-xs">Inquiries</p>
+          <p className="body-small">International stockist, collaboration, tasting, and object inquiries are open.</p>
         </div>
       </div>
     </section>
