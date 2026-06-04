@@ -1,22 +1,23 @@
 import { Link } from "react-router-dom";
 import type { TeaProduct } from "@/types/catalog";
 import { catalog } from "@/data/catalog";
-import { formatPrice, lowestPrice, productImage } from "@/data/catalog";
+import { formatPrice, lowestPrice } from "@/data/catalog";
+import { TeaVisual } from "@/components/TeaVisual";
 
 type Props = { product: TeaProduct; index?: number };
 
-export function ProductCard({ product, index }: Props) {
+export function ProductCard({ product, index = 0 }: Props) {
   const category = catalog.categories.find((c) => c.slug === product.category);
   const from = lowestPrice(product.variants);
-  const num = index !== undefined ? String(index + 1).padStart(2, "0") : null;
+  const num = String(index + 1).padStart(2, "0");
 
   return (
     <Link to={`/tea/${product.slug}`} className="product-card">
       <figure>
-        <img src={productImage(product)} alt={product.title_en} loading="lazy" />
+        <TeaVisual product={product} index={index} />
       </figure>
       <div className="product-card-meta">
-        {num && <span className="product-index">{num}</span>}
+        <span className="product-index">{num}</span>
         <div>
           {category && <p className="label-xs">{category.name_en}</p>}
           <h3>{product.title_en}</h3>
