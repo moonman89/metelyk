@@ -1,96 +1,87 @@
 import { Link } from "react-router-dom";
-import { catalog } from "@/data/catalog";
+import { catalog, productImage } from "@/data/catalog";
 import { ProductCard } from "@/components/ProductCard";
 
 export function HomePage() {
+  const hero = catalog.products[1] ?? catalog.products[0];
+  const editorialLeft = catalog.products[8] ?? catalog.products[0];
+  const editorialRight = catalog.products[10] ?? catalog.products[1];
   const featured = catalog.products.slice(0, 4);
 
   return (
     <>
-      <section className="entry-screen" id="entry">
-        <div className="entry-wordmark">M E T E L Y K</div>
-        <div className="entry-center">
-          <p className="label-xs">Old Traditions / New Details</p>
-          <h1>Tea House</h1>
-          <p className="label-xs">International</p>
-          <a href="#world" className="enter-link">[Enter]</a>
+      <section className="entry-screen entry-screen--motion" id="entry">
+        <div className="entry-atmosphere" aria-hidden>
+          <span />
+          <span />
+          <span />
         </div>
-        <div className="entry-foot">
-          <span>Loose Leaf</span>
-          <span>Objects</span>
-          <span>Archive</span>
+        <div className="entry-corner entry-corner--tl">M</div>
+        <div className="entry-corner entry-corner--tr">K</div>
+        <div className="entry-corner entry-corner--bl">T</div>
+        <div className="entry-corner entry-corner--br">Y</div>
+        <div className="entry-copy">
+          <p>METELYK</p>
+          <p>OLD TRADITIONS / NEW DETAILS</p>
+          <p>INTERNATIONAL TEA HOUSE</p>
         </div>
+        <a href="#world" className="entry-enter">[ENTER]</a>
       </section>
 
-      <section className="hero-editorial" id="world">
-        <div className="hero-media hero-media--generated">
-          <div className="hero-still">
-            <span>Oolong</span>
-            <span>Pu-er</span>
-            <span>White Tea</span>
-          </div>
-        </div>
-        <div className="hero-bar">
-          <p className="label-xs">Old traditions / New details</p>
-          <p className="label-xs hero-loc">International Tea House</p>
-        </div>
-      </section>
+      <section className="hs-home" id="world">
+        <figure className="hs-hero-media">
+          <img src={productImage(hero)} alt={hero.title_en} />
+          <figcaption>UNMUTE</figcaption>
+        </figure>
 
-      <section className="block-manifesto page-pad">
-        <p className="body-small manifesto-text">
-          Metelyk is an international tea house working with Chinese leaves, ritual objects, and slow attention. The collection moves through oolong, pu-er, white, green, and red teas with the restraint of a fashion house and the precision of a tea room.
-        </p>
-        <Link to="/catalog" className="cta-block">
-          [ Enter collection ]
-        </Link>
-      </section>
-
-      <section className="block-split page-pad">
-        <div className="split-cell split-cell--image split-cell--generated">
-          <div className="source-still">
-            <span>Source</span>
-            <span>Leaf</span>
-            <span>Water</span>
-          </div>
-        </div>
-        <div className="split-cell split-cell--text">
-          <p className="section-label">
-            <span>1</span> Atelier
+        <section className="hs-manifesto">
+          <p>
+            METELYK is an international tea house with a precise approach to Chinese leaf, vessels, ceremony, and modern ritual. Alongside traditional tea practice, Metelyk presents oolong, pu-er, white, green, and red teas through an editorial lens: direct, restrained, sensory, and built for slow attention. Objects, tastings, archives, and selected leaves become an invitation further into the house.
           </p>
-          <p className="body-small">
-            The house is built around quiet ceremony: selected leaves, restrained packaging, clean objects, and a visual language that treats tea like a cultural object rather than a grocery product.
-          </p>
-          <Link to="/about" className="link-underline label-xs">
-            Read more →
+        </section>
+
+        <section className="hs-two-up" aria-label="Tea house editorial images">
+          <Link to="/catalog" className="hs-image-tile">
+            <img src={productImage(editorialLeft)} alt={editorialLeft.title_en} />
+            <span>COLLECTION</span>
           </Link>
-        </div>
-      </section>
-
-      <section className="block-featured page-pad">
-        <div className="section-row">
-          <p className="section-label">
-            <span>2</span> Collection
-          </p>
-          <Link to="/catalog" className="link-underline label-xs">
-            {catalog.products.length} See all
+          <Link to="/about" className="hs-image-tile">
+            <img src={productImage(editorialRight)} alt={editorialRight.title_en} />
+            <span>ATELIER</span>
           </Link>
-        </div>
-        <div className="product-grid product-grid--editorial">
-          {featured.map((p, i) => (
-            <ProductCard key={p.slug} product={p} index={i} />
-          ))}
-        </div>
-      </section>
+        </section>
 
-      <section className="block-duo page-pad">
-        <Link to="/teaware" className="duo-link">
-          <span className="label-xs">Objects</span>
-          <span className="duo-title">Vessels</span>
-        </Link>
-        <Link to="/archive" className="duo-link">
-          <span className="label-xs">Archive</span>
-          <span className="duo-title">Field Notes</span>
-        </Link>
+        <section className="hs-appointment">
+          <Link to="/about">BOOK A TASTING</Link>
+        </section>
+
+        <section className="hs-collection-strip">
+          <div className="hs-section-head">
+            <p>METELYK COLLECTION</p>
+            <Link to="/catalog">{catalog.products.length} SEE ALL</Link>
+          </div>
+          <div className="product-grid product-grid--editorial">
+            {featured.map((p, i) => (
+              <ProductCard key={p.slug} product={p} index={i} />
+            ))}
+          </div>
+        </section>
+
+        <section className="hs-archive-preview">
+          <div className="hs-section-head">
+            <p>METELYK TEA ARCHIVES</p>
+            <Link to="/archive">SEE ALL</Link>
+          </div>
+          <div className="hs-archive-grid">
+            {featured.map((p, i) => (
+              <Link to={`/tea/${p.slug}`} key={p.slug} className="hs-archive-card">
+                <span>{String(i + 1).padStart(2, "0")}</span>
+                <img src={productImage(p)} alt={p.title_en} />
+                <p>{p.title_en}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
       </section>
     </>
   );
