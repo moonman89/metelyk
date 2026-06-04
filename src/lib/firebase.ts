@@ -1,0 +1,38 @@
+import { initializeApp, type FirebaseApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+import {
+  FIREBASE_AUTH_DOMAIN,
+  FIREBASE_PROJECT_ID,
+  FIREBASE_STORAGE_BUCKET,
+} from "@/config/firebase.project";
+
+function readEnv(value: string | undefined, fallback: string): string {
+  if (typeof value !== "string") return fallback;
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed : fallback;
+}
+
+const firebaseConfig = {
+  apiKey: readEnv(import.meta.env.VITE_FIREBASE_API_KEY, ""),
+  authDomain: readEnv(import.meta.env.VITE_FIREBASE_AUTH_DOMAIN, FIREBASE_AUTH_DOMAIN),
+  projectId: readEnv(import.meta.env.VITE_FIREBASE_PROJECT_ID, FIREBASE_PROJECT_ID),
+  storageBucket: readEnv(import.meta.env.VITE_FIREBASE_STORAGE_BUCKET, FIREBASE_STORAGE_BUCKET),
+  messagingSenderId: readEnv(import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID, ""),
+  appId: readEnv(import.meta.env.VITE_FIREBASE_APP_ID, ""),
+};
+
+let app: FirebaseApp | null = null;
+
+export function getFirebaseApp(): FirebaseApp {
+  if (!app) app = initializeApp(firebaseConfig);
+  return app;
+}
+
+export function getDb() {
+  return getFirestore(getFirebaseApp());
+}
+
+export function getBucket() {
+  return getStorage(getFirebaseApp());
+}
