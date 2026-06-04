@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { catalog, formatPrice, productImage } from "@/data/catalog";
+import { ProductDescription } from "@/components/ProductDescription";
 
 export function ProductPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -52,15 +53,7 @@ export function ProductPage() {
           <button type="button" className="btn-primary" disabled title="Checkout in next phase">
             Add to cart — {formatPrice(variant.price_uah)}
           </button>
-          <div className="description">
-            <p>
-              <strong style={{ color: "var(--text)" }}>Tasting notes (source)</strong>
-            </p>
-            <p>{product.description_ua}</p>
-            <p style={{ marginTop: "1rem", fontSize: "0.8rem" }}>
-              Full English copy will live in Firestore after CMS seed. Ukrainian descriptions preserved from the source catalog.
-            </p>
-          </div>
+          <ProductDescription slug={product.slug} />
         </div>
       </div>
     </div>

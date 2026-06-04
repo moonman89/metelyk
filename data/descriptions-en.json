@@ -1,0 +1,132 @@
+{
+  "bairuixiang": {
+    "name": "Bai Rui Xiang (White Daphne Fragrance)",
+    "type": "Oolong — Wuyi Mountains, Fujian",
+    "year": "2023",
+    "aroma": "Sweet, woody-spicy, with nutty, fruity, and floral notes.",
+    "taste": "Dense, gently sweet, silky, with a hint of fruit acidity and spice; long finish.",
+    "effect": "Warming, clarifies the mind, relaxes the body while staying alert.",
+    "story": "Named after the winter daphne flower of southern China. Grown in the Wuyi reserve, birthplace of cliff oolongs. Excellent for ceremony, meditation, study, or focused work — relaxed body, engaged mind.",
+    "brewing": "Gongfu style in porous clay for heavily oxidized oolongs. ~6 g per 120 ml, 95°C, short infusions. 7–8 steeps."
+  },
+  "dahongpao": {
+    "name": "Da Hong Pao (Big Red Robe)",
+    "type": "Oolong — Wuyi Mountains, Fujian",
+    "year": "2023",
+    "aroma": "Berry and nut, hints of chocolate, flowers, and wood.",
+    "taste": "Silky, juicy, full-bodied, berry brightness, refreshing long aftertaste.",
+    "effect": "Inner clarity and calm; relaxes the body, clears the head.",
+    "story": "A landmark Chinese tea with over a thousand years of history. From the Wuyi national reserve, organic cultivation. Three generations of oolong specialists — exceptional quality, rarely matched in Ukraine.",
+    "brewing": "Gongfu in porous clay. 6–8 g per 120 ml, 95–100°C. Start ~10 sec, lengthen each steep to ~2 min. About 9–10 infusions."
+  },
+  "dancong": {
+    "name": "Fen Huang Dan Cong (Phoenix Mountain single bush)",
+    "type": "Oolong — Guangdong",
+    "year": "2023",
+    "aroma": "Spicy-berry, fruit, floral, balsamic.",
+    "taste": "Rich, sweet, structured, fresh berry acidity.",
+    "effect": "Tonifying, warming, stimulates focus and energy.",
+    "story": "From Chaozhou, home of gongfu cha. One of China's four famous oolongs. Vivid, memorable character — ideal for daily drinking or beginners who want a bold introduction. Great for study and work.",
+    "brewing": "95–100°C in porcelain gaiwan or clay. 5 g per 100 ml, first steep 7–10 sec, increase time. 7–8 steeps."
+  },
+  "dianhong": {
+    "name": "Dian Hong",
+    "type": "Red tea — Yunnan",
+    "year": "2023",
+    "aroma": "Wood, cherry, honey pollen.",
+    "taste": "Sweet biscuit, honey, bright acidity.",
+    "effect": "Warming, grounding, focuses attention.",
+    "story": "One of the most expressive red teas, popular in the West since the late 20th century. Distinct flavor and golden buds — a perfect introduction to red tea.",
+    "brewing": "4–5 g per 100 ml at 90–100°C in gaiwan or clay. Western style: 1 g per 200 ml boiling water."
+  },
+  "fudingbaicha": {
+    "name": "Fu Ding Bai Cha",
+    "type": "White tea — Fuding, Fujian",
+    "year": "2023",
+    "aroma": "Gentle sweet florals woven with fruit.",
+    "taste": "Delicate, evolving sweetness; many infusions reveal depth.",
+    "effect": "Calming, clarifying; low caffeine — suitable evening cup in warm seasons.",
+    "story": "Classic white tea from the birthplace of white tea in eastern Fujian. Carefully picked buds and leaves. Brew slightly below boiling; porcelain, clay, or glass all work well.",
+    "brewing": "Let water cool below boiling so it does not scald the leaf. Porcelain or glass; many re-steeps."
+  },
+  "gongtingshupuer": {
+    "name": "Gong Ting Shu Pu-er (Palace ripe pu-er)",
+    "type": "Shu (ripe) pu-er",
+    "year": "2017",
+    "aroma": "Woody, warm, deep, restrained.",
+    "taste": "Smooth, sweet, light woodiness, dried fruit hint.",
+    "effect": "Warms, softens the mind, gently energizes the body.",
+    "story": "Fermented pu-er from palace-grade buds — dense, smooth, and rich. Shu pu-er is gentle on an empty stomach and supports digestion. Best morning or first half of the day.",
+    "brewing": "95°C, clay or gaiwan. 6 g per 100 ml, ~10 sec first steep, lengthen. 6–8 infusions."
+  },
+  "jinjunmei": {
+    "name": "Jin Jun Mei (Golden Eyebrows)",
+    "type": "Red tea — Wuyi, Fujian",
+    "year": "2023",
+    "aroma": "Fresh bread, cane sugar, vanilla, orchid.",
+    "taste": "Honey, muscat grape, cinnamon, minerals.",
+    "effect": "Warming, uplifting; lightly relaxing in smaller cups.",
+    "story": "Refined Wuyi red tea named for its golden, downy leaves. Wonderful entry point to Chinese tea — each steep shifts the flavor palette.",
+    "brewing": "4 g per 100 ml at 90–95°C in gaiwan or clay. Western: half teaspoon per 200 ml, 15–20 sec."
+  },
+  "laoshupuer": {
+    "name": "Lao Shu Shu Pu-er (old-tree ripe, 2003)",
+    "type": "Shu (ripe) pu-er",
+    "year": "2003",
+    "aroma": "Mature, nutty-balsamic, dried fruit, dark chocolate.",
+    "taste": "Velvety, balanced sweet and dried fruit, spicy long finish.",
+    "effect": "Warms, relaxes awareness while pu-er energizes body and mind.",
+    "story": "Twenty-one years of aging — for collectors and serious shu lovers. Balanced and warming; ideal winter–spring. A benchmark for quality ripe pu-er.",
+    "brewing": "95–100°C, clay or gaiwan. 7 g per 100 ml, ~10 sec first steep. Up to 10 infusions."
+  },
+  "longjin": {
+    "name": "Long Jing (Dragon Well)",
+    "type": "Green tea",
+    "year": "2024",
+    "aroma": "Vivid grassy-floral, sunflower seed, pistachio.",
+    "taste": "Soft, buttery, sweet, juicy, long finish.",
+    "effect": "Refreshes and clears the mind.",
+    "story": "Among China's most famous greens — flat \"sparrow tongue\" leaves. Over 1,500 years of craft; noted in Lu Yu's tea classic. High in vitamin C and antioxidants.",
+    "brewing": "75–85°C, porcelain or glass. 4 g per 100 ml, short infusions, up to 6 steeps."
+  },
+  "rougui": {
+    "name": "Rou Gui (Cinnamon)",
+    "type": "Oolong — Wuyi, Fujian",
+    "year": "2023",
+    "aroma": "Deep, bready-spicy, cinnamon, bark, berry, chocolate.",
+    "taste": "Sweet, juicy, light bite, dried cherry, cinnamon, vanilla.",
+    "effect": "Warmth, calm steadiness — like after meditation.",
+    "story": "A beloved Wuyi cultivar since the Qing dynasty, roasted with \"high fire.\" Ceremonial tea with a bright, layered profile.",
+    "brewing": "95°C, porcelain or porous clay. 6 g per 100 ml, lengthening infusions. 6–8 steeps."
+  },
+  "tieguanyin": {
+    "name": "Tie Guan Yin (Iron Goddess of Mercy)",
+    "type": "Oolong",
+    "year": "2024",
+    "aroma": "Intense floral-grassy, lilac, melon, vanilla.",
+    "taste": "Full, refreshing, silky, light fruit acidity, long finish.",
+    "effect": "Eases fatigue and tension; nourishes clarity.",
+    "story": "China's best-known oolong, legends dating to the 7th–9th centuries. Distinct aroma even for beginners. Rich in vitamins and minerals; harmonizing, peaceful state.",
+    "brewing": "85–90°C, porcelain gaiwan or clay. 6 g per 100 ml, lengthening steeps. Up to 10 infusions."
+  },
+  "xiaozhong": {
+    "name": "Xiao Zhong (Lapsang Souchong)",
+    "type": "Red tea — Fujian",
+    "year": "2023",
+    "aroma": "Spicy, fruity, bready.",
+    "taste": "Soft, velvety, light acidity, rose hip and dried fruit.",
+    "effect": "Gentle stimulation, warming; milder cups relax.",
+    "story": "Classic Fujian red tea, known in the West and even served in the British Parliament. Everyday cup with depth — morning or evening with friends.",
+    "brewing": "Gongfu or Western style; 90–95°C."
+  },
+  "yundeshengpuer": {
+    "name": "Yunnan Sheng Pu-er",
+    "type": "Sheng (raw) pu-er",
+    "year": "2023",
+    "aroma": "Dense, herbal-spicy, dried fruit, hay.",
+    "taste": "Fine, juicy, oily-sweet, light wood astringency, long finish.",
+    "effect": "Clears the mind, charges the body.",
+    "story": "Fresh sheng from old tea trees — soft taste, strong pu-er effect. For ceremony, focus, or gatherings. Prized in China; ages beautifully when stored well. Spring–summer tea that cools and energizes.",
+    "brewing": "90–95°C, clay or gaiwan. 5 g per 100 ml, ~5 sec first steep. About 10 infusions."
+  }
+}
