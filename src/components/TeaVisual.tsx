@@ -20,20 +20,12 @@ export function TeaVisual({ product, imageSrc, index = 0 }: Props) {
   const number = String(index + 1).padStart(2, "0");
 
   return (
-    <div className={`tea-visual tea-visual--${product.category}`} aria-label={`${product.title_en} visual`}>
-      <div className="tea-visual__image-wrap">
-        {imageSrc ? (
-          <img className="tea-visual__image" src={imageSrc} alt="" loading="lazy" />
-        ) : (
-          <div className="tea-visual__fallback" />
-        )}
-      </div>
-      <div className="tea-visual__veil" />
-      <div className="tea-visual__plate">
-        <div className="tea-visual__shadow" />
-        <div className="tea-visual__object tea-visual__object--leaf" />
-        <div className="tea-visual__object tea-visual__object--cup" />
-      </div>
+    <div className="tea-visual" aria-label={`${product.title_en} image`}>
+      {imageSrc ? (
+        <img className="tea-visual__image" src={imageSrc} alt={product.title_en} loading="lazy" />
+      ) : (
+        <div className="tea-visual__fallback" />
+      )}
       <div className="tea-visual__meta">
         <span>{number}</span>
         <span>{label}</span>
