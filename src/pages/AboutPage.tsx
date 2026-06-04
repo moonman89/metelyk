@@ -5,7 +5,7 @@ export function AboutPage() {
   return (
     <section className="section">
       <div className="container" style={{ maxWidth: 720 }}>
-        <h2 style={{ fontSize: "2.75rem", marginBottom: "1.5rem" }}>About Syorb</h2>
+        <h2 style={{ fontSize: "2.75rem", marginBottom: "1.5rem" }}>About Metelyk</h2>
         <p style={{ color: "var(--text-muted)", marginBottom: "2rem", fontSize: "1.05rem" }}>
           {catalog.pages.about_en}
         </p>

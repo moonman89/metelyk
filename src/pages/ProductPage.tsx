@@ -58,7 +58,7 @@ export function ProductPage() {
             </p>
             <p>{product.description_ua}</p>
             <p style={{ marginTop: "1rem", fontSize: "0.8rem" }}>
-              Full English copy will live in Firestore after CMS seed. Ukrainian description preserved from syorb.me.
+              Full English copy will live in Firestore after CMS seed. Ukrainian descriptions preserved from the source catalog.
             </p>
           </div>
         </div>

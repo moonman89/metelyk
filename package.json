@@ -1,5 +1,5 @@
 {
-  "name": "syorb-shop",
+  "name": "metelyk",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "firebase:init": "firebase projects:create syorb-shop --display-name \"Syorb Tea Shop\" || true",
+    "firebase:init": "firebase projects:create metelyk-shop --display-name \"Metelyk Tea Shop\" || true",
     "firebase:deploy:rules": "firebase deploy --only firestore:rules,storage"
   },
   "dependencies": {
