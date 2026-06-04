@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public read for catalog (products, categories, pages)
+    match /products/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /categories/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /pages/{id} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Orders: create by authenticated or guest session (tighten in shop phase)
+    match /orders/{orderId} {
+      allow read: if request.auth != null && request.auth.uid == resource.data.userId;
+      allow create: if request.resource.data.keys().hasAll(['items', 'total', 'status']);
+      allow update, delete: if false;
+    }
+
+    // Cart sessions (optional, for logged-in users)
+    match /carts/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // AI assistant conversation threads
+    match /assistant_threads/{threadId} {
+      allow read, write: if request.auth != null && request.auth.uid == resource.data.userId;
+      allow create: if request.auth != null;
+    }
+  }
+}
