@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import type { TeaProduct } from "@/types/catalog";
 import { catalog } from "@/data/catalog";
-import { formatPrice, lowestPrice } from "@/data/catalog";
+import { formatPrice, lowestPrice, productImage } from "@/data/catalog";
 import { TeaVisual } from "@/components/TeaVisual";
 
 type Props = { product: TeaProduct; index?: number };
@@ -14,7 +14,7 @@ export function ProductCard({ product, index = 0 }: Props) {
   return (
     <Link to={`/tea/${product.slug}`} className="product-card">
       <figure>
-        <TeaVisual product={product} index={index} />
+        <TeaVisual product={product} imageSrc={productImage(product)} index={index} />
       </figure>
       <div className="product-card-meta">
         <span className="product-index">{num}</span>
