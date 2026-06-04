@@ -7,32 +7,59 @@ export function HomePage() {
 
   return (
     <>
-      <section className="hero-editorial">
-        <div className="hero-media">
-          <img src="/assets/original/brand/hero.png" alt="" />
+      <section className="entry-screen" id="entry">
+        <div className="entry-wordmark">M E T E L Y K</div>
+        <div className="entry-center">
+          <p className="label-xs">Old Traditions / New Details</p>
+          <h1>Tea House</h1>
+          <p className="label-xs">International</p>
+          <a href="#world" className="enter-link">[Enter]</a>
+        </div>
+        <div className="entry-foot">
+          <span>Loose Leaf</span>
+          <span>Objects</span>
+          <span>Archive</span>
+        </div>
+      </section>
+
+      <section className="hero-editorial" id="world">
+        <div className="hero-media hero-media--generated">
+          <div className="hero-still">
+            <span>Oolong</span>
+            <span>Pu-er</span>
+            <span>White Tea</span>
+          </div>
         </div>
         <div className="hero-bar">
           <p className="label-xs">Old traditions / New details</p>
-          <p className="label-xs hero-loc">Kyiv UA</p>
+          <p className="label-xs hero-loc">International Tea House</p>
         </div>
       </section>
 
       <section className="block-manifesto page-pad">
-        <p className="body-small manifesto-text">{catalog.pages.about_en}</p>
+        <p className="body-small manifesto-text">
+          Metelyk is an international tea house working with Chinese leaves, ritual objects, and slow attention. The collection moves through oolong, pu-er, white, green, and red teas with the restraint of a fashion house and the precision of a tea room.
+        </p>
         <Link to="/catalog" className="cta-block">
           [ Enter collection ]
         </Link>
       </section>
 
       <section className="block-split page-pad">
-        <div className="split-cell split-cell--image">
-          <img src="/assets/original/brand/sources.png" alt="Tea sourcing" />
+        <div className="split-cell split-cell--image split-cell--generated">
+          <div className="source-still">
+            <span>Source</span>
+            <span>Leaf</span>
+            <span>Water</span>
+          </div>
         </div>
         <div className="split-cell split-cell--text">
           <p className="section-label">
-            <span>1</span> Sources
+            <span>1</span> Atelier
           </p>
-          <p className="body-small">{catalog.pages.sources_en}</p>
+          <p className="body-small">
+            The house is built around quiet ceremony: selected leaves, restrained packaging, clean objects, and a visual language that treats tea like a cultural object rather than a grocery product.
+          </p>
           <Link to="/about" className="link-underline label-xs">
             Read more →
           </Link>
@@ -57,12 +84,12 @@ export function HomePage() {
 
       <section className="block-duo page-pad">
         <Link to="/teaware" className="duo-link">
-          <span className="label-xs">Teaware</span>
+          <span className="label-xs">Objects</span>
           <span className="duo-title">Vessels</span>
         </Link>
-        <Link to="/gifts" className="duo-link">
-          <span className="label-xs">Gifts</span>
-          <span className="duo-title">Certificates</span>
+        <Link to="/archive" className="duo-link">
+          <span className="label-xs">Archive</span>
+          <span className="duo-title">Field Notes</span>
         </Link>
       </section>
     </>
