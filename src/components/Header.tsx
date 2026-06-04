@@ -3,8 +3,8 @@ import { catalog } from "@/data/catalog";
 
 const nav = [
   { to: "/catalog", num: "1", label: "Collection" },
-  { to: "/teaware", num: "2", label: "Teaware" },
-  { to: "/gifts", num: "3", label: "Gifts" },
+  { to: "/teaware", num: "2", label: "Objects" },
+  { to: "/archive", num: "3", label: "Archive" },
   { to: "/about", num: "4", label: "Atelier" },
 ] as const;
 
@@ -24,7 +24,7 @@ export function Header() {
           ))}
         </nav>
         <div className="header-actions">
-          <button type="button" className="btn-bracket" disabled title="Cart — coming soon">
+          <button type="button" className="btn-bracket" disabled title="Bag coming soon">
             Bag [0]
           </button>
         </div>
