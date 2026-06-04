@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { catalog, formatPrice } from "@/data/catalog";
+import { catalog, formatPrice, productImage } from "@/data/catalog";
 import { ProductDescription } from "@/components/ProductDescription";
 import { TeaVisual } from "@/components/TeaVisual";
 
@@ -32,7 +32,7 @@ export function ProductPage() {
 
       <div className="product-editorial">
         <div className="product-editorial-media">
-          <TeaVisual product={product} index={index} />
+          <TeaVisual product={product} imageSrc={productImage(product)} index={index} />
         </div>
         <div className="product-editorial-info">
           {category && <p className="label-xs">{category.name_en}</p>}
