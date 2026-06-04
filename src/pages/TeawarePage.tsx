@@ -2,24 +2,25 @@ import { catalog, formatPrice } from "@/data/catalog";
 
 export function TeawarePage() {
   return (
-    <section className="section">
-      <div className="container">
-        <div className="section-head">
-          <h2>Teaware</h2>
-        </div>
-        <div className="product-grid">
-          {catalog.teaware.map((item) => (
-            <article key={item.slug} className="product-card">
-              <figure>
-                <img src={item.image_local} alt={item.title_en} />
-              </figure>
-              <div className="body">
+    <section className="page-pad">
+      <p className="section-label">
+        <span>2</span> Teaware
+      </p>
+      <div className="product-grid product-grid--editorial">
+        {catalog.teaware.map((item, i) => (
+          <div key={item.slug} className="product-card product-card--static">
+            <figure>
+              <img src={item.image_local} alt={item.title_en} />
+            </figure>
+            <div className="product-card-meta">
+              <span className="product-index">{String(i + 1).padStart(2, "0")}</span>
+              <div>
                 <h3>{item.title_en}</h3>
-                <p className="price-from">{formatPrice(item.variants[0].price_uah)}</p>
+                <p className="label-xs">{formatPrice(item.variants[0].price_uah)}</p>
               </div>
-            </article>
-          ))}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

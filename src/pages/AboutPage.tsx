@@ -3,23 +3,23 @@ import { catalog } from "@/data/catalog";
 export function AboutPage() {
   const { delivery_en } = catalog.pages;
   return (
-    <section className="section">
-      <div className="container" style={{ maxWidth: 720 }}>
-        <h2 style={{ fontSize: "2.75rem", marginBottom: "1.5rem" }}>About Metelyk</h2>
-        <p style={{ color: "var(--text-muted)", marginBottom: "2rem", fontSize: "1.05rem" }}>
-          {catalog.pages.about_en}
-        </p>
-        <div className="info-grid">
-          <div className="info-card">
-            <h3>Delivery</h3>
-            <p>{delivery_en.nova_poshta}</p>
-            <p>{delivery_en.pickup}</p>
-          </div>
-          <div className="info-card">
-            <h3>Payment</h3>
-            <p>{delivery_en.card}</p>
-            <p>{delivery_en.cash}</p>
-          </div>
+    <section className="page-about page-pad">
+      <p className="section-label">
+        <span>4</span> Atelier
+      </p>
+      <h1 className="page-heading">About Metelyk</h1>
+      <p className="body-small manifesto-text">{catalog.pages.about_en}</p>
+
+      <div className="about-grid">
+        <div className="about-cell">
+          <p className="label-xs">Delivery</p>
+          <p className="body-small">{delivery_en.nova_poshta}</p>
+          <p className="body-small">{delivery_en.pickup}</p>
+        </div>
+        <div className="about-cell">
+          <p className="label-xs">Payment</p>
+          <p className="body-small">{delivery_en.card}</p>
+          <p className="body-small">{delivery_en.cash}</p>
         </div>
       </div>
     </section>

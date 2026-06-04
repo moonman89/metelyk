@@ -10,9 +10,11 @@ export function ProductPage() {
 
   if (!product) {
     return (
-      <div className="container product-page">
-        <p>Tea not found.</p>
-        <Link to="/catalog">← Back to catalog</Link>
+      <div className="page-pad">
+        <p className="label-xs">Not found</p>
+        <Link to="/catalog" className="link-underline label-xs">
+          ← Collection
+        </Link>
       </div>
     );
   }
@@ -21,28 +23,26 @@ export function ProductPage() {
   const variant = product.variants[variantIdx];
 
   return (
-    <div className="container product-page">
-      <Link to="/catalog" style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>
-        ← Tea catalog
+    <article className="page-product page-pad">
+      <Link to="/catalog" className="link-underline label-xs">
+        ← 1 Collection
       </Link>
-      <div className="product-layout" style={{ marginTop: "2rem" }}>
-        <div className="product-gallery">
+
+      <div className="product-editorial">
+        <div className="product-editorial-media">
           <img src={productImage(product)} alt={product.title_en} />
         </div>
-        <div className="product-info">
-          {category && (
-            <p style={{ color: "var(--accent)", fontSize: "0.7rem", letterSpacing: "0.12em", textTransform: "uppercase" }}>
-              {category.name_en}
-            </p>
-          )}
-          <h1>{product.title_en}</h1>
-          <p className="subtitle">{product.subtitle_en}</p>
-          <div className="variant-list">
+        <div className="product-editorial-info">
+          {category && <p className="label-xs">{category.name_en}</p>}
+          <h1 className="product-title">{product.title_en}</h1>
+          <p className="product-subtitle">{product.subtitle_en}</p>
+
+          <div className="variant-stack">
             {product.variants.map((v, i) => (
               <button
                 key={v.id}
                 type="button"
-                className={`variant-btn ${i === variantIdx ? "selected" : ""}`}
+                className={`variant-row ${i === variantIdx ? "selected" : ""}`}
                 onClick={() => setVariantIdx(i)}
               >
                 <span>{v.weight}</span>
@@ -50,12 +50,14 @@ export function ProductPage() {
               </button>
             ))}
           </div>
-          <button type="button" className="btn-primary" disabled title="Checkout in next phase">
-            Add to cart — {formatPrice(variant.price_uah)}
+
+          <button type="button" className="cta-block cta-block--full" disabled>
+            [ Add to bag — {formatPrice(variant.price_uah)} ]
           </button>
+
           <ProductDescription slug={product.slug} />
         </div>
       </div>
-    </div>
+    </article>
   );
 }

@@ -11,38 +11,38 @@ export function CatalogPage() {
   }, [category]);
 
   return (
-    <section className="section">
-      <div className="container">
-        <div className="section-head">
-          <h2>Tea catalog</h2>
-          <span style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>
-            {filtered.length} teas · prices in UAH
-          </span>
-        </div>
-        <div className="category-pills">
+    <section className="page-catalog page-pad">
+      <div className="section-row">
+        <p className="section-label">
+          <span>1</span> Collection
+        </p>
+        <p className="label-xs">{filtered.length} teas · UAH</p>
+      </div>
+
+      <div className="filter-row">
+        <button
+          type="button"
+          className={`filter-btn ${category === "all" ? "active" : ""}`}
+          onClick={() => setCategory("all")}
+        >
+          All
+        </button>
+        {catalog.categories.map((c) => (
           <button
+            key={c.slug}
             type="button"
-            className={`pill ${category === "all" ? "active" : ""}`}
-            onClick={() => setCategory("all")}
+            className={`filter-btn ${category === c.slug ? "active" : ""}`}
+            onClick={() => setCategory(c.slug)}
           >
-            All
+            {c.name_en}
           </button>
-          {catalog.categories.map((c) => (
-            <button
-              key={c.slug}
-              type="button"
-              className={`pill ${category === c.slug ? "active" : ""}`}
-              onClick={() => setCategory(c.slug)}
-            >
-              {c.name_en}
-            </button>
-          ))}
-        </div>
-        <div className="product-grid">
-          {filtered.map((p) => (
-            <ProductCard key={p.slug} product={p} />
-          ))}
-        </div>
+        ))}
+      </div>
+
+      <div className="product-grid product-grid--editorial">
+        {filtered.map((p, i) => (
+          <ProductCard key={p.slug} product={p} index={i} />
+        ))}
       </div>
     </section>
   );
