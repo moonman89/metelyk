@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { catalog, productImage } from "@/data/catalog";
 import { ProductCard } from "@/components/ProductCard";
 
+const homeHeroImage = "/assets/generated/about-tea-wide.svg";
+
 function EntryScreen({ onEnter }: { onEnter: () => void }) {
   return (
     <section className="entry-screen entry-screen--motion entry-screen--standalone" id="entry">
@@ -29,7 +31,6 @@ function EntryScreen({ onEnter }: { onEnter: () => void }) {
 
 export function HomePage() {
   const [entered, setEntered] = useState(false);
-  const hero = catalog.products[1] ?? catalog.products[0];
   const editorialLeft = catalog.products[8] ?? catalog.products[0];
   const editorialRight = catalog.products[10] ?? catalog.products[1];
   const featured = catalog.products.slice(0, 4);
@@ -41,7 +42,7 @@ export function HomePage() {
   return (
     <section className="hs-home" id="world">
       <figure className="hs-hero-media">
-        <img src={productImage(hero)} alt={hero.title_en} />
+        <img src={homeHeroImage} alt="Metelyk tea ceremony" />
         <figcaption>UNMUTE</figcaption>
       </figure>
 
