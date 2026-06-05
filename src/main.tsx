@@ -6,6 +6,7 @@ import "./styles/index.css";
 import "./styles/luxury-overrides.css";
 import "./styles/product-image-treatment.css";
 import "./styles/hs68-closer.css";
+import "./styles/logo-overrides.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
