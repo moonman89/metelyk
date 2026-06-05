@@ -1,0 +1,20 @@
+{
+  "name": "Metelyk",
+  "short_name": "Metelyk",
+  "description": "International tea house for Chinese leaves, ritual objects, and slow attention.",
+  "icons": [
+    {
+      "src": "/assets/brand/metelyk-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/brand/metelyk-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffdd44",
+  "background_color": "#000000",
+  "display": "standalone"
+}

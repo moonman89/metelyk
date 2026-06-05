@@ -13,7 +13,7 @@ export function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link to="/" className="wordmark wordmark--with-logo" aria-label="Metelyk home">
-          <img src="/assets/generated/metelyk-logo-navy.svg" alt="" className="wordmark-logo" />
+          <img src="/assets/brand/metelyk-icon-32.png" alt="" className="wordmark-logo" width={32} height={32} />
           <span>{catalog.brand.name.toUpperCase()}</span>
         </Link>
         <nav className="nav-main">
