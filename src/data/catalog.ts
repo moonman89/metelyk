@@ -16,5 +16,5 @@ export function lowestPrice(variants: { price_usd: number }[]): number {
 }
 
 export function productImage(product: { image_local?: string | null; image_url?: string | null }): string {
-  return product.image_local ?? product.image_url ?? "/assets/original/brand/hero.png";
+  return product.image_local ?? product.image_url ?? "/assets/brand/hero.png";
 }

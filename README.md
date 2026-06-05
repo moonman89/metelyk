@@ -1,42 +1,46 @@
 # Metelyk
 
-Upscale English tea storefront and catalog archive, rebuilt from the [Syorb](https://syorb.me) product line. Prepared for Firebase (Firestore + Storage), e-commerce, and an AI tea assistant.
+International English tea house — catalog, demo cart, and ChatGPT tea guide. Rebuilt from the [Syorb](https://syorb.me) product line.
 
-## What's included
+## Stack
+
+- **Frontend:** React + Vite + TypeScript
+- **Hosting:** Firebase Hosting → https://metelyk-shop.web.app
+- **Backend:** Firestore, Storage, Cloud Functions (`teaGuideChat` + OpenAI)
+
+## Project layout
 
 | Path | Purpose |
 |------|---------|
-| `data/catalog.json` | Full catalog: teas, teaware, gift certs, UAH prices, UA descriptions |
-| `public/assets/original/` | Product images, certificates, brand visuals |
-| `src/` | React + Vite English catalog site |
-| `firestore.rules` / `storage.rules` | Firebase rules for shop + assistant |
+| `data/catalog.json` | Teas, teaware, certificates (USD, oz) |
+| `data/descriptions-en.json` | English tasting notes for AI + product copy |
+| `public/assets/products/` | Product photos named by slug (`bairuixiang.png`, …) |
+| `public/assets/brand/` | Logo, mark, hero fallback |
+| `public/assets/hero/` | Homepage hero image |
+| `src/` | React app (cart, checkout, tea assistant) |
+| `functions/` | `teaGuideChat` OpenAI proxy |
+| `docs/` | Firebase + tea assistant setup |
 
 ## Run locally
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/metelyk.git
-cd metelyk
 npm install
+cp .env.example .env   # fill Firebase web config
 npm run dev
 ```
 
-Open http://localhost:5173
+http://localhost:5173
 
-## Firebase
-
-Create project **`metelyk-shop`** in [Firebase Console](https://console.firebase.google.com), enable Firestore + Storage, copy web config to `.env` (see `.env.example`), then:
+## Deploy
 
 ```bash
-firebase login && firebase use metelyk-shop
-npm run firebase:deploy:rules
+npm run build
+firebase deploy --only hosting
+npm run firebase:deploy:functions   # tea guide (needs OPENAI_API_KEY secret)
 ```
 
-Seed instructions: `scripts/seed-firestore.md`
-
-## Source data
-
-Product data scraped from https://syorb.me (June 2026). **Metelyk** is the new brand; inventory and sourcing story carry over from the original Kyiv shop.
+Setup guides: `docs/firebase-setup.md`, `docs/tea-assistant-setup.md`
 
 ## License
 
-Public repo for review and mentorship. Product images and copy from the original Syorb site — confirm rights before commercial launch.
+Product images and copy from the original Syorb site — confirm rights before commercial launch.
