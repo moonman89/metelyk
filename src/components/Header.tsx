@@ -3,7 +3,7 @@ import { catalog } from "@/data/catalog";
 
 const nav = [
   { to: "/catalog", num: "1", label: "Collection" },
-  { to: "/teaware", num: "2", label: "Objects" },
+  { to: "/teaware", num: "2", label: "Teaware" },
   { to: "/archive", num: "3", label: "Archive" },
   { to: "/about", num: "4", label: "About" },
 ] as const;
