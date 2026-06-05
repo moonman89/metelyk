@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { catalog } from "@/data/catalog";
+import { useCart } from "@/context/CartContext";
 
 const nav = [
   { to: "/catalog", num: "1", label: "Collection" },
@@ -9,11 +10,13 @@ const nav = [
 ] as const;
 
 export function Header() {
+  const { itemCount } = useCart();
+
   return (
     <header className="site-header">
       <div className="header-inner">
         <Link to="/" className="wordmark wordmark--with-logo" aria-label="Metelyk home">
-          <img src="/assets/brand/metelyk-icon-32.png" alt="" className="wordmark-logo" width={32} height={32} />
+          <img src="/assets/generated/metelyk-logo-navy.svg" alt="" className="wordmark-logo" width={32} height={32} />
           <span>{catalog.brand.name.toUpperCase()}</span>
         </Link>
         <nav className="nav-main">
@@ -25,9 +28,9 @@ export function Header() {
           ))}
         </nav>
         <div className="header-actions">
-          <button type="button" className="btn-bracket" disabled title="Bag coming soon">
-            Bag [0]
-          </button>
+          <Link to="/cart" className="btn-bracket btn-bracket--active" title="View bag">
+            Bag [{itemCount}]
+          </Link>
         </div>
       </div>
     </header>

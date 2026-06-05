@@ -7,7 +7,7 @@ export function ArchivePage() {
       <p className="section-label">
         <span>3</span> Archive
       </p>
-      <h1 className="page-heading">Tea index / field notes / objects</h1>
+      <h1 className="page-heading">Tea index / objects</h1>
       <p className="body-small manifesto-text">
         A working archive of leaves, vessels, origins, tastings, and brewing notes from the Metelyk house.
       </p>

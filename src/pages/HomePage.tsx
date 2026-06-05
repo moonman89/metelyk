@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { catalog, productImage } from "@/data/catalog";
 import { ProductCard } from "@/components/ProductCard";
 
-const homeHeroImage = "/assets/generated/about-tea-wide.svg";
+const homeHeroImage = "/assets/generated/hero-tea-room.jpg";
 
 function EntryScreen({ onEnter }: { onEnter: () => void }) {
   return (

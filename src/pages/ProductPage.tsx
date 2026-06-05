@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { catalog, formatPrice, productImage } from "@/data/catalog";
+import { useCart } from "@/context/CartContext";
 import { ProductDescription } from "@/components/ProductDescription";
 import { TeaVisual } from "@/components/TeaVisual";
 
@@ -8,6 +9,8 @@ export function ProductPage() {
   const { slug } = useParams<{ slug: string }>();
   const product = catalog.products.find((p) => p.slug === slug);
   const [variantIdx, setVariantIdx] = useState(0);
+  const [added, setAdded] = useState(false);
+  const { addItem } = useCart();
 
   if (!product) {
     return (
@@ -53,8 +56,25 @@ export function ProductPage() {
             ))}
           </div>
 
-          <button type="button" className="cta-block cta-block--full" disabled>
-            [ Inquiry — {formatPrice(variant.price_uah)} ]
+          <button
+            type="button"
+            className="cta-block cta-block--full"
+            onClick={() => {
+              addItem({
+                kind: "tea",
+                slug: product.slug,
+                variantId: variant.id,
+                title: product.title_en,
+                subtitle: product.subtitle_en,
+                weight: variant.weight,
+                price_uah: variant.price_uah,
+                image: productImage(product),
+              });
+              setAdded(true);
+              window.setTimeout(() => setAdded(false), 2000);
+            }}
+          >
+            {added ? "[ Added to bag ]" : `[ Add to bag — ${formatPrice(variant.price_uah)} ]`}
           </button>
 
           <ProductDescription slug={product.slug} />

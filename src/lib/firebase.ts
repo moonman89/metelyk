@@ -24,7 +24,14 @@ const firebaseConfig = {
 
 let app: FirebaseApp | null = null;
 
+export function isFirebaseConfigured(): boolean {
+  return firebaseConfig.apiKey.length > 0 && firebaseConfig.appId.length > 0;
+}
+
 export function getFirebaseApp(): FirebaseApp {
+  if (!isFirebaseConfigured()) {
+    throw new Error("Firebase is not configured. Add VITE_FIREBASE_* values to .env");
+  }
   if (!app) app = initializeApp(firebaseConfig);
   return app;
 }

@@ -8,6 +8,9 @@ import { ProductPage } from "@/pages/ProductPage";
 import { TeawarePage } from "@/pages/TeawarePage";
 import { ArchivePage } from "@/pages/ArchivePage";
 import { AboutPage } from "@/pages/AboutPage";
+import { CartPage } from "@/pages/CartPage";
+import { CheckoutPage } from "@/pages/CheckoutPage";
+import { OrderConfirmationPage } from "@/pages/OrderConfirmationPage";
 
 export default function App() {
   return (
@@ -23,6 +26,9 @@ export default function App() {
             <Route path="/teaware" element={<TeawarePage />} />
             <Route path="/archive" element={<ArchivePage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/order/:orderId" element={<OrderConfirmationPage />} />
           </Routes>
         </main>
         <Footer />

@@ -1,5 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Metelyk logo">
-  <rect width="512" height="512" fill="#ffffff"/>
   <g fill="none" stroke="#050505" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
     <path d="M256 256 C198 250 150 222 128 184 C110 154 114 126 126 112 C166 112 212 132 238 168 C252 188 257 220 256 256 Z"/>
     <path d="M256 256 C314 250 362 222 384 184 C402 154 398 126 386 112 C346 112 300 132 274 168 C260 188 255 220 256 256 Z"/>
