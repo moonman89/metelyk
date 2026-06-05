@@ -3,9 +3,6 @@ import { catalog } from "@/data/catalog";
 export function AboutPage() {
   return (
     <section className="page-about page-pad">
-      <figure className="about-hero-image">
-        <img src="/assets/generated/about-tea-wide.svg" alt="Metelyk tea ceremony" />
-      </figure>
       <p className="section-label">
         <span>4</span> Atelier
       </p>
