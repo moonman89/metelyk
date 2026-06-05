@@ -1,19 +1,11 @@
+import { Link } from "react-router-dom";
 import { catalog } from "@/data/catalog";
-
-const archiveItems = [
-  { num: "01", title: "Wuyi Oolong", detail: "Mineral heat / roasted depth" },
-  { num: "02", title: "Phoenix Dan Cong", detail: "Floral lift / mountain fruit" },
-  { num: "03", title: "Sheng Pu-er", detail: "Bright leaf / living storage" },
-  { num: "04", title: "Shu Pu-er", detail: "Dark body / quiet earth" },
-  { num: "05", title: "White Tea", detail: "Soft air / slow sweetness" },
-  { num: "06", title: "Teaware Objects", detail: "Vessels for focused ritual" },
-];
 
 export function ArchivePage() {
   return (
     <section className="page-archive page-pad">
       <p className="section-label">
-        <span>4</span> Archive
+        <span>3</span> Archive
       </p>
       <h1 className="page-heading">Tea index / field notes / objects</h1>
       <p className="body-small manifesto-text">
@@ -21,13 +13,24 @@ export function ArchivePage() {
       </p>
 
       <div className="archive-table">
-        {archiveItems.map((item) => (
-          <article key={item.num} className="archive-row">
-            <span>{item.num}</span>
-            <h2>{item.title}</h2>
-            <p>{item.detail}</p>
-          </article>
-        ))}
+        {catalog.products.map((product, index) => {
+          const category = catalog.categories.find((item) => item.slug === product.category);
+          const num = String(index + 1).padStart(2, "0");
+
+          return (
+            <Link key={product.slug} to={`/tea/${product.slug}`} className="archive-row archive-row--link">
+              <span>{num}</span>
+              <h2>{product.title_en}</h2>
+              <p>{category?.name_en ?? "Tea"} / {product.subtitle_en}</p>
+            </Link>
+          );
+        })}
+
+        <Link to="/teaware" className="archive-row archive-row--link">
+          <span>{String(catalog.products.length + 1).padStart(2, "0")}</span>
+          <h2>Teaware Objects</h2>
+          <p>Vessels for focused ritual</p>
+        </Link>
       </div>
 
       <div className="archive-note">
