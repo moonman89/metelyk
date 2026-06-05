@@ -3,12 +3,15 @@ import { catalog } from "@/data/catalog";
 export function AboutPage() {
   return (
     <section className="page-about page-pad">
+      <figure className="about-hero-image">
+        <img src="/assets/generated/about-tea-wide.svg" alt="Metelyk tea ceremony" />
+      </figure>
       <p className="section-label">
         <span>4</span> Atelier
       </p>
       <h1 className="page-heading">About Metelyk</h1>
       <p className="body-small manifesto-text">
-        Metelyk is an international tea house for Chinese leaves, ritual objects, and quiet ceremony. The house language is restrained, archival, and focused: tea presented with the same care usually reserved for fashion, furniture, and art books.
+        Metelyk is an international tea house for Chinese leaves, ritual objects, and quiet ceremony. The house language is restrained, archival, and focused.
       </p>
 
       <div className="about-grid">
@@ -18,7 +21,7 @@ export function AboutPage() {
         </div>
         <div className="about-cell">
           <p className="label-xs">Inquiries</p>
-          <p className="body-small">International stockist, collaboration, tasting, and object inquiries are open.</p>
+          <p className="body-small">International tasting and collaboration inquiries are open.</p>
         </div>
       </div>
     </section>
