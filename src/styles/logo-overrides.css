@@ -1,0 +1,25 @@
+.wordmark--with-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  letter-spacing: 0.32em;
+}
+
+.wordmark--with-logo span {
+  display: inline-block;
+}
+
+.wordmark-logo {
+  width: 18px;
+  height: 18px;
+  display: block;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 860px) {
+  .wordmark-logo {
+    width: 16px;
+    height: 16px;
+  }
+}
