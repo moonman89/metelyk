@@ -181,7 +181,7 @@ export function CheckoutPage() {
                   {line.title}
                   {line.weight ? ` · ${line.weight}` : ""} × {line.qty}
                 </span>
-                <span>{formatPrice(line.price_uah * line.qty)}</span>
+                <span>{formatPrice(line.price_usd * line.qty)}</span>
               </li>
             ))}
           </ul>

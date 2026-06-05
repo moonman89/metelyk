@@ -11,6 +11,7 @@ import { AboutPage } from "@/pages/AboutPage";
 import { CartPage } from "@/pages/CartPage";
 import { CheckoutPage } from "@/pages/CheckoutPage";
 import { OrderConfirmationPage } from "@/pages/OrderConfirmationPage";
+import { TeaAssistant } from "@/components/TeaAssistant";
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <TeaAssistant />
       </div>
     </div>
   );

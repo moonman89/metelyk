@@ -50,7 +50,7 @@ export function CartPage() {
                   onChange={(e) => setLineQty(line.lineId, Number(e.target.value))}
                 />
               </label>
-              <p className="cart-line-price">{formatPrice(line.price_uah * line.qty)}</p>
+              <p className="cart-line-price">{formatPrice(line.price_usd * line.qty)}</p>
               <button type="button" className="link-underline label-xs" onClick={() => removeLine(line.lineId)}>
                 Remove
               </button>

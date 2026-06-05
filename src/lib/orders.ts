@@ -22,13 +22,13 @@ function toOrderItems(lines: CartLine[]): OrderItem[] {
     variantId: line.variantId,
     title: line.title,
     weight: line.weight,
-    price_uah: line.price_uah,
+    price_usd: line.price_usd,
     qty: line.qty,
   }));
 }
 
 export function cartSubtotal(lines: CartLine[]): number {
-  return lines.reduce((sum, line) => sum + line.price_uah * line.qty, 0);
+  return lines.reduce((sum, line) => sum + line.price_usd * line.qty, 0);
 }
 
 export function saveOrderToSession(order: MockOrder): void {
@@ -59,7 +59,7 @@ export async function placeMockOrder(
     orderId,
     items,
     total,
-    currency: "UAH",
+    currency: "USD",
     status: "mock_paid",
     email: checkout.email.trim(),
     name: checkout.name.trim(),
@@ -76,7 +76,7 @@ export async function placeMockOrder(
         orderId,
         items,
         total,
-        currency: "UAH",
+        currency: "USD",
         status: "mock_paid",
         email: order.email,
         name: order.name,

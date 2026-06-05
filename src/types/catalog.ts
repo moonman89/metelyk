@@ -1,7 +1,7 @@
 export type PriceVariant = {
   id: string;
   weight?: string;
-  price_uah: number;
+  price_usd: number;
 };
 
 export type TeaProduct = {

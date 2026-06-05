@@ -7,28 +7,16 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import type { CartLine, CartLineKind } from "@/types/cart";
+import type { AddCartItemInput, CartLine, CartLineKind } from "@/types/cart";
 import { cartSubtotal } from "@/lib/orders";
 
 const STORAGE_KEY = "metelyk:cart";
-
-type AddItemInput = {
-  kind: CartLineKind;
-  slug: string;
-  variantId: string;
-  title: string;
-  subtitle?: string;
-  weight?: string;
-  price_uah: number;
-  image?: string;
-  qty?: number;
-};
 
 type CartContextValue = {
   lines: CartLine[];
   itemCount: number;
   subtotal: number;
-  addItem: (item: AddItemInput) => void;
+  addItem: (item: AddCartItemInput) => void;
   removeLine: (lineId: string) => void;
   setLineQty: (lineId: string, qty: number) => void;
   clearCart: () => void;
@@ -58,7 +46,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(lines));
   }, [lines]);
 
-  const addItem = useCallback((item: AddItemInput) => {
+  const addItem = useCallback((item: AddCartItemInput) => {
     const qty = item.qty ?? 1;
     const key = lineKey(item.kind, item.slug, item.variantId);
 
@@ -79,7 +67,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
           title: item.title,
           subtitle: item.subtitle,
           weight: item.weight,
-          price_uah: item.price_uah,
+          price_usd: item.price_usd,
           qty,
           image: item.image,
         },

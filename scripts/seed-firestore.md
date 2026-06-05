@@ -31,4 +31,6 @@ for (const p of catalog.products) {
 }
 ```
 
-Next phase: Cloud Function for AI assistant + LiqPay checkout webhooks.
+Catalog uses `price_usd` and US weights (oz). Re-run `node scripts/convert-catalog-usd.mjs` if refreshing from UAH source.
+
+Next phase: Cloud Function for email receipts + optional LiqPay when leaving demo mode.

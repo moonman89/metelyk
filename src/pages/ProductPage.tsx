@@ -51,7 +51,7 @@ export function ProductPage() {
                 onClick={() => setVariantIdx(i)}
               >
                 <span>{v.weight}</span>
-                <span>{formatPrice(v.price_uah)}</span>
+                <span>{formatPrice(v.price_usd)}</span>
               </button>
             ))}
           </div>
@@ -67,14 +67,14 @@ export function ProductPage() {
                 title: product.title_en,
                 subtitle: product.subtitle_en,
                 weight: variant.weight,
-                price_uah: variant.price_uah,
+                price_usd: variant.price_usd,
                 image: productImage(product),
               });
               setAdded(true);
               window.setTimeout(() => setAdded(false), 2000);
             }}
           >
-            {added ? "[ Added to bag ]" : `[ Add to bag — ${formatPrice(variant.price_uah)} ]`}
+            {added ? "[ Added to bag ]" : `[ Add to bag — ${formatPrice(variant.price_usd)} ]`}
           </button>
 
           <ProductDescription slug={product.slug} />

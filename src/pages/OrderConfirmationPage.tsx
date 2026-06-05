@@ -59,7 +59,7 @@ export function OrderConfirmationPage() {
                 {item.title}
                 {item.weight ? ` · ${item.weight}` : ""} × {item.qty}
               </span>
-              <span>{formatPrice(item.price_uah * item.qty)}</span>
+              <span>{formatPrice(item.price_usd * item.qty)}</span>
             </li>
           ))}
         </ul>

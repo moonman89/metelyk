@@ -1,5 +1,17 @@
 export type CartLineKind = "tea" | "teaware";
 
+export type AddCartItemInput = {
+  kind: CartLineKind;
+  slug: string;
+  variantId: string;
+  title: string;
+  subtitle?: string;
+  weight?: string;
+  price_usd: number;
+  image?: string;
+  qty?: number;
+};
+
 export type CartLine = {
   lineId: string;
   kind: CartLineKind;
@@ -8,7 +20,7 @@ export type CartLine = {
   title: string;
   subtitle?: string;
   weight?: string;
-  price_uah: number;
+  price_usd: number;
   qty: number;
   image?: string;
 };
@@ -28,7 +40,7 @@ export type OrderItem = {
   variantId: string;
   title: string;
   weight?: string;
-  price_uah: number;
+  price_usd: number;
   qty: number;
 };
 

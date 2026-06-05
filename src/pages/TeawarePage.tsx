@@ -22,7 +22,7 @@ export function TeawarePage() {
                 <span className="product-index">{String(i + 1).padStart(2, "0")}</span>
                 <div>
                   <h3>{item.title_en}</h3>
-                  <p className="label-xs">{formatPrice(variant.price_uah)}</p>
+                  <p className="label-xs">{formatPrice(variant.price_usd)}</p>
                   <button
                     type="button"
                     className="cta-block cta-block--muted teaware-add-btn"
@@ -32,7 +32,7 @@ export function TeawarePage() {
                         slug: item.slug,
                         variantId: variant.id,
                         title: item.title_en,
-                        price_uah: variant.price_uah,
+                        price_usd: variant.price_usd,
                         image: item.image_local,
                       });
                       setAddedSlug(item.slug);
