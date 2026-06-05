@@ -314,6 +314,22 @@ body {
   color: var(--hs-blue) !important;
 }
 
+.about-hero-image {
+  margin: var(--hs-gutter);
+  overflow: hidden;
+  background: #f6dfb8;
+}
+
+.about-hero-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.page-about .section-label {
+  margin-top: 42px;
+}
+
 @media (max-width: 860px) {
   .header-inner { padding: 0 16px; }
   .hs-two-up, .hs-archive-grid { grid-template-columns: 1fr; }
