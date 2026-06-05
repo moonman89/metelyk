@@ -67,7 +67,7 @@ export async function placeMockOrder(
     payment: { provider: "mock", last4 },
     createdAt: new Date().toISOString(),
     receiptNote:
-      "Demo checkout — no payment was processed. This receipt is for preview only.",
+      "Thank you — your order is recorded. No card payment was processed on this site.",
   };
 
   if (isFirebaseConfigured()) {

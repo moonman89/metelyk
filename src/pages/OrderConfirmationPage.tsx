@@ -28,7 +28,7 @@ export function OrderConfirmationPage() {
       <h1 className="page-heading">Order {order.orderId}</h1>
       <p className="body-small manifesto-text">{order.receiptNote}</p>
       <p className="body-small">
-        Demo receipt for <strong>{order.email}</strong>. Payment mock · card ending {order.payment.last4}.
+        Receipt sent to <strong>{order.email}</strong>. Card ending {order.payment.last4} (not charged).
       </p>
 
       <div className="receipt-card">

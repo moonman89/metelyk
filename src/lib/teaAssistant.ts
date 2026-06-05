@@ -126,7 +126,7 @@ export async function sendTeaAssistantMessage(
       console.warn("OpenAI tea guide error, trying fallback.", err);
       return fallbackReply(
         userText,
-        "ChatGPT backend is not ready — deploy the teaGuideChat function and set OPENAI_API_KEY.",
+        "The tea guide is briefly unavailable. Try again in a moment.",
       );
     }
   }
@@ -135,7 +135,7 @@ export async function sendTeaAssistantMessage(
     return await sendGeminiMessage(userText);
   } catch (err) {
     console.warn("Gemini tea guide error, using fallback.", err);
-    return fallbackReply(userText, "Gemini billing or setup issue — switch to OpenAI in .env.");
+    return fallbackReply(userText, "The tea guide is briefly unavailable. Try again in a moment.");
   }
 }
 
@@ -160,15 +160,11 @@ function fallbackReply(userText: string, setupHint?: string): string {
           ? "grounding and soft"
           : "steady and meditative";
 
-  const hint =
-    setupHint ??
-    "Connect ChatGPT via Firebase Functions (see scripts/setup-openai-tea-guide.md).";
+  const suffix = setupHint ? `\n\n_${setupHint}_` : "";
 
   return `For that mood, I'd start with **${pick.title_en}** (${pick.subtitle_en}) — ${d}. The ${variant.weight ?? "listing"} at ${formatPrice(variant.price_usd)} is a good entry.
 
-ADD_TO_CART:{"kind":"tea","slug":"${pick.slug}","variantId":"${variant.id}","qty":1}
-
-(${hint})`;
+ADD_TO_CART:{"kind":"tea","slug":"${pick.slug}","variantId":"${variant.id}","qty":1}${suffix}`;
 }
 
 export function resetTeaAssistantChat(): void {

@@ -132,7 +132,7 @@ export function TeaAssistant() {
         <div className="tea-assistant-panel" role="dialog" aria-label="Metelyk tea guide">
           <header className="tea-assistant-header">
             <p className="label-xs">Metelyk · AI tea guide</p>
-            <p className="body-small">Mood-led recommendations · ChatGPT · demo bag</p>
+            <p className="body-small">Mood-led recommendations · add straight to your bag</p>
           </header>
 
           <div className="tea-assistant-moods">

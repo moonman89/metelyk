@@ -13,7 +13,7 @@ export function CartPage() {
         </p>
         <h1 className="page-heading">Your bag is empty</h1>
         <p className="body-small manifesto-text">
-          Add leaves or teaware from the collection. Checkout is a demo — no real charges.
+          Add leaves or teaware from the collection. Checkout saves your order — card is not charged yet.
         </p>
         <Link to="/catalog" className="cta-block">
           [ Browse collection ]
@@ -60,10 +60,10 @@ export function CartPage() {
       </div>
 
       <div className="cart-summary">
-        <p className="label-xs">Subtotal (demo)</p>
+        <p className="label-xs">Subtotal</p>
         <p className="cart-total">{formatPrice(subtotal)}</p>
         <Link to="/checkout" className="cta-block cta-block--full">
-          [ Proceed to demo checkout ]
+          [ Proceed to checkout ]
         </Link>
         <Link to="/catalog" className="link-underline label-xs">
           ← Continue browsing

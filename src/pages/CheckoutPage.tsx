@@ -19,7 +19,7 @@ function formatCardNumber(value: string): string {
   return digits.replace(/(\d{4})(?=\d)/g, "$1 ").trim();
 }
 
-function isValidDemoCard(cardNumber: string): boolean {
+function isValidCardNumber(cardNumber: string): boolean {
   const digits = cardNumber.replace(/\D/g, "");
   return digits.length >= 13;
 }
@@ -47,15 +47,15 @@ export function CheckoutPage() {
     setError(null);
 
     if (!form.email.includes("@")) {
-      setError("Enter a valid email for your demo receipt.");
+      setError("Enter a valid email for your receipt.");
       return;
     }
     if (!form.name.trim()) {
       setError("Enter your name.");
       return;
     }
-    if (!isValidDemoCard(form.cardNumber)) {
-      setError("Enter a demo card number (any 13–16 digits — not charged).");
+    if (!isValidCardNumber(form.cardNumber)) {
+      setError("Enter a valid card number (13–16 digits).");
       return;
     }
     if (!/^\d{2}\/\d{2}$/.test(form.cardExpiry.trim())) {
@@ -63,7 +63,7 @@ export function CheckoutPage() {
       return;
     }
     if (form.cardCvc.replace(/\D/g, "").length < 3) {
-      setError("Enter a 3- or 4-digit demo CVC.");
+      setError("Enter a 3- or 4-digit CVC.");
       return;
     }
 
@@ -73,7 +73,7 @@ export function CheckoutPage() {
       clearCart();
       navigate(`/order/${order.orderId}`, { state: { order } });
     } catch {
-      setError("Could not complete demo order. Try again.");
+      setError("Could not place your order. Try again.");
     } finally {
       setSubmitting(false);
     }
@@ -88,10 +88,10 @@ export function CheckoutPage() {
       <p className="section-label">
         <span>·</span> Checkout
       </p>
-      <h1 className="page-heading">Demo checkout</h1>
-      <p className="checkout-demo-banner body-small">
-        No real payment. Card fields are cosmetic only. You will receive an on-screen receipt; email
-        delivery can be wired later via Firebase Functions.
+      <h1 className="page-heading">Checkout</h1>
+      <p className="checkout-note body-small">
+        Card details are checked on this page only — we do not charge cards yet. You will get an
+        on-screen receipt; confirmation email can be added later.
       </p>
 
       <div className="checkout-layout">
@@ -130,7 +130,7 @@ export function CheckoutPage() {
           </fieldset>
 
           <fieldset>
-            <legend className="label-xs">Demo card (not charged)</legend>
+            <legend className="label-xs">Card (staging — not charged)</legend>
             <label>
               <span className="label-xs">Card number</span>
               <input
@@ -168,7 +168,7 @@ export function CheckoutPage() {
           {error && <p className="checkout-error">{error}</p>}
 
           <button type="submit" className="cta-block cta-block--full" disabled={submitting}>
-            {submitting ? "[ Processing demo… ]" : `[ Place demo order — ${formatPrice(subtotal)} ]`}
+            {submitting ? "[ Placing order… ]" : `[ Place order — ${formatPrice(subtotal)} ]`}
           </button>
         </form>
 

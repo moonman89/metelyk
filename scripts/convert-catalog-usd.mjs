@@ -50,9 +50,9 @@ catalog.certificates = catalog.certificates.map((c) => ({
 }));
 
 if (catalog.pages?.delivery_en) {
-  catalog.pages.delivery_en.nova_poshta = "International shipping — rates at checkout (demo)";
+  catalog.pages.delivery_en.nova_poshta = "International shipping — quoted at checkout";
   catalog.pages.delivery_en.pickup = "Studio pickup by appointment";
-  catalog.pages.delivery_en.card = "Demo card checkout only";
+  catalog.pages.delivery_en.card = "Card checkout (staging — no charge processed yet)";
 }
 
 writeFileSync(path, `${JSON.stringify(catalog, null, 2)}\n`);

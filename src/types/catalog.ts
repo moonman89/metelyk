@@ -14,11 +14,10 @@ export type TeaProduct = {
   variants: PriceVariant[];
   description_ua: string;
   image_local?: string | null;
-  image_url?: string | null;
 };
 
 export type Catalog = {
-  meta: { source: string; scraped_at: string; currency: string };
+  meta: { currency: string; updated_at?: string };
   brand: {
     name: string;
     tagline_en: string;
