@@ -11,6 +11,7 @@ import {
   sendTeaAssistantMessage,
   stripAddToCartLines,
   type AddToCartAction,
+  type ChatTurn,
 } from "@/lib/teaAssistant";
 
 type ChatMessage = {
@@ -85,7 +86,13 @@ export function TeaAssistant() {
       scrollToEnd();
 
       try {
-        const raw = await sendTeaAssistantMessage(trimmed);
+        const history: ChatTurn[] = messages
+          .filter((m) => m.role === "user" || m.role === "assistant")
+          .map((m) => ({
+            role: m.role as "user" | "assistant",
+            content: stripAddToCartLines(m.text),
+          }));
+        const raw = await sendTeaAssistantMessage(trimmed, history);
         const actions = parseAddToCartActions(raw);
         const display = stripAddToCartLines(raw);
         setMessages((prev) => [
@@ -125,7 +132,7 @@ export function TeaAssistant() {
         <div className="tea-assistant-panel" role="dialog" aria-label="Metelyk tea guide">
           <header className="tea-assistant-header">
             <p className="label-xs">Metelyk · AI tea guide</p>
-            <p className="body-small">Mood-led recommendations · USD · demo bag</p>
+            <p className="body-small">Mood-led recommendations · ChatGPT · demo bag</p>
           </header>
 
           <div className="tea-assistant-moods">

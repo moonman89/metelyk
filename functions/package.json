@@ -1,0 +1,16 @@
+{
+  "name": "metelyk-functions",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "predeploy": "node ../scripts/sync-catalog-to-functions.mjs"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.4.0",
+    "firebase-functions": "^6.4.0",
+    "openai": "^4.104.0"
+  }
+}

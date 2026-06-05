@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "firebase:init": "firebase projects:create metelyk-shop --display-name \"Metelyk Tea Shop\" || true",
-    "firebase:deploy:rules": "firebase deploy --only firestore:rules,storage"
+    "firebase:deploy:rules": "firebase deploy --only firestore:rules,storage",
+    "firebase:deploy:functions": "node scripts/sync-catalog-to-functions.mjs && firebase deploy --only functions",
+    "firebase:deploy:assistant": "npm run build && firebase deploy --only hosting,functions"
   },
   "dependencies": {
     "firebase": "^11.6.0",
